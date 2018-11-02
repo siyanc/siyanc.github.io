@@ -1,11 +1,6 @@
 ---
 title: "Siyan Chen"
 ---
-<link rel="stylesheet" href="styles.css" type="text/css">
-<link rel="stylesheet" href="academicons/css/academicons.min.css"/>
-<link rel="apple-touch-icon" href="/images/JG_transparent.png" >
-
-
 
 1st year Master student in Biostatistics
 

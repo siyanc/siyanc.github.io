@@ -1,5 +1,5 @@
 ---
-title: "Untitled"
+title: "CentralPark, NY Visualization"
 output: 
   flexdashboard::flex_dashboard:
     orientation: columns
@@ -33,12 +33,23 @@ modified_noaa = data.frame(ny_noaa) %>%
          snwd = as.numeric(snwd),
          tmax = as.numeric(tmax)/10, 
          tmin = as.numeric(tmin)/10)
+# Filter id == "USW00094728", which is data for Central_park_NY, adjust the unit for some variables 
+
+prcp_data = modified_noaa %>%
+  select(year, prcp) %>% 
+  mutate(prcp = as.numeric(prcp > 0)) %>% 
+  # when prcp is greater than 0, count it.
+  group_by(year, prcp) %>% 
+  summarize(count = n()) %>%
+  # get the count of prcp days of one year
+  filter(prcp == 1)
+## This dataset is about precpitation. I am interested in number of days have precpitation of one year. 
 ```
 
 Column {data-width=650}
 -----------------------------------------------------------------------
 
-### Chart A
+### Chart A- tmax VS. tmin in Central Park, NY
 
 ```{r}
 modified_noaa %>%
@@ -50,23 +61,19 @@ modified_noaa %>%
 Column {data-width=350}
 -----------------------------------------------------------------------
 
-### Chart B
+### Chart B - Boxplot of tmax across months
 
 ```{r}
 modified_noaa %>%
   plot_ly(y = ~tmax, x = ~ month, type = "box", colors = "Set2")
 ```
 
-### Chart C
+### Chart C - No.days having precpitation each year
 
 ```{r}
-prcp_data = modified_noaa %>%
-  select(year, month, day, prcp) %>% 
-  mutate(prcp = as.numeric(prcp > 1)) 
-prcp_data %>%
-  group_by(year, prcp) %>% 
-  summarize(count = n()) %>% 
-  filter(prcp == 1) %>% 
-plot_ly( x = ~year, y = ~count, type = 'bar')
+
+plot_ly(prcp_data, x = ~year, y = ~count, type = 'bar') %>% 
+  layout(yaxis = list(title = 'No. of day prcp'))
+
 ```
 
