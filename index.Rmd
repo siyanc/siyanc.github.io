@@ -6,7 +6,7 @@ MS in Biostatistics <br>
 
 Columbia University Mailman School of Public Health <br>
 
-
+<img src="image/siyan.jpg" alt="siyan" style="width:50%; height:50%">
 
 ### About
 I recieved a BS in Biology from [University of California, Irvine](https://uci.edu/) with a minor in statistics in 2018. I am currently a graduate student in [Columbia University](https://www.columbia.edu/). I am interested in data analysis and want to apply biostatistics to solve real world problem. 
