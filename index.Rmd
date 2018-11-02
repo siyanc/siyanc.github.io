@@ -1,0 +1,34 @@
+---
+title: "Siyan Chen"
+---
+<link rel="stylesheet" href="styles.css" type="text/css">
+<link rel="stylesheet" href="academicons/css/academicons.min.css"/>
+<link rel="apple-touch-icon" href="/images/JG_transparent.png" >
+
+
+
+1st year Master student in Biostatistics
+
+Columbia University Mailman School of Public Health 
+
+![SC](./image/siyan.jpg)
+
+
+### About
+I recieved a BS in Biology from University of California, Irvine with a minor in statistics in 2018. I am interested in data analysis and want to apply biostatistics to solve real world problem. 
+<br>
+<br>
+
+
+### Contact Information
+
+Siyan Chen
+
+50 Haven Ave
+
+New York, NY 10032
+
+Email: sc4456@cumc.columbia.edu
+
+phone: 9495021046
+
