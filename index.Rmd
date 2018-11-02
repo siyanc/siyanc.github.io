@@ -19,6 +19,8 @@ I recieved a BS in Biology from University of California, Irvine with a minor in
 <br>
 <br>
 
+### Dashboard
+link to [flexdashboard](dashboard_template.html)
 
 ### Contact Information
 

@@ -1,0 +1,72 @@
+---
+title: "Untitled"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: fill
+editor_options: 
+  chunk_output_type: console
+---
+
+
+```{r setup, include=FALSE}
+library(flexdashboard)
+library(tidyverse)
+library(viridis)
+library(p8105.datasets)
+library(plotly)
+
+```
+
+```{r, include = FALSE}
+modified_noaa = data.frame(ny_noaa) %>% 
+  filter(id == "USW00094728") %>% 
+  janitor::clean_names() %>% 
+  separate(date, into = c("year", "month", "day"), sep = "-") %>% 
+  janitor::clean_names() %>%
+  mutate(id =as.factor(id),
+         year = as.numeric(year), 
+         month = as.numeric(month),
+         day = as.numeric(day),
+         prcp = as.numeric(prcp)/10,
+         snow = as.numeric(snow),
+         snwd = as.numeric(snwd),
+         tmax = as.numeric(tmax)/10, 
+         tmin = as.numeric(tmin)/10)
+```
+
+Column {data-width=650}
+-----------------------------------------------------------------------
+
+### Chart A
+
+```{r}
+modified_noaa %>%
+  plot_ly(x = ~tmin, y = ~tmax, type = "scatter", mode = "markers",
+          alpha = 0.5, 
+          color = ~month)
+```
+
+Column {data-width=350}
+-----------------------------------------------------------------------
+
+### Chart B
+
+```{r}
+modified_noaa %>%
+  plot_ly(y = ~tmax, x = ~ month, type = "box", colors = "Set2")
+```
+
+### Chart C
+
+```{r}
+prcp_data = modified_noaa %>%
+  select(year, month, day, prcp) %>% 
+  mutate(prcp = as.numeric(prcp > 1)) 
+prcp_data %>%
+  group_by(year, prcp) %>% 
+  summarize(count = n()) %>% 
+  filter(prcp == 1) %>% 
+plot_ly( x = ~year, y = ~count, type = 'bar')
+```
+
