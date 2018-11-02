@@ -2,7 +2,7 @@
 title: "Siyan Chen"
 ---
 
-1st year Master student in Biostatistics
+MS in Biostatistics <br>
 
 Columbia University Mailman School of Public Health 
 
@@ -10,12 +10,14 @@ Columbia University Mailman School of Public Health
 
 
 ### About
-I recieved a BS in Biology from University of California, Irvine with a minor in statistics in 2018. I am interested in data analysis and want to apply biostatistics to solve real world problem. 
+I recieved a BS in Biology from [University of California, Irvine](https://uci.edu/) with a minor in statistics in 2018. I am currently a graduate student in [Columbia University](https://www.columbia.edu/). I am interested in data analysis and want to apply biostatistics to solve real world problem. 
 <br>
 <br>
 
 ### Dashboard
 link to [flexdashboard](dashboard_template.html)
+<br>
+<br>
 
 ### Contact Information
 
